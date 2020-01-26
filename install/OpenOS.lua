@@ -179,6 +179,7 @@ end
 
 -- loop: Loops through to allow user to choose
 os.sleep(0.5)
+drawState()
 while run do
 	local id, _, _, charCode, _ = event.pull()
 	if id == "interrupted" then
@@ -189,13 +190,13 @@ while run do
 		-- keyboard was pressed down
 		if charCode == 200 then
 			-- Up arrow key
-			if selected > 1 then
-				selected = selected - 1
+			if select > 1 then
+				select = select - 1
 			end
 		elseif charCode == 208 then
 			-- Down arrow key
-			if selected < maxSelect then
-				selected = selected + 1
+			if select < maxSelect then
+				select = select + 1
 			end
 		end
 	elseif id == "key_up" then
