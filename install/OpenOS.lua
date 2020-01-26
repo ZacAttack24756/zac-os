@@ -39,15 +39,15 @@ local preset = {
 	black = function()
 		gpu.setBackground(0xFFFFFF)
 		gpu.setForeground(0x000000)
-	end,
-	sel = function(bool)
-		if (bool == true) then
-			preset.black()
-		else
-			preset.white()
-		end
 	end
 }
+local function preselect(bool)
+	if (bool == true) then
+		preset.black()
+	else
+		preset.white()
+	end
+end
 -- Set Resolution
 if width > 80 or height > 25 then
 	gpu.setResolution(80, 25)
@@ -75,23 +75,23 @@ local function drawTextList(startX, startY, list)
 end
 -- Dynamic Functions
 local function drawMenuOptions()
-	preset.sel(select == 1)
+	preselect(select == 1)
 	gpu.set(6, 11, "Install onto Floppy Disk")
-	preset.sel(select == 2)
+	preselect(select == 2)
 	gpu.set(6, 12, "Exit")
 end
 local function drawVersionOptions()
 	for i, v in pairs(repos) do
-		preset.sel(select == i)
+		preselect(select == i)
 		gpu.set(6, 10 + i, repos[i].desc)
 	end
-	preset.sel(select == (#repos + 1))
+	preselect(select == (#repos + 1))
 	gpu.set(6, 11 + #repos, "Cancel")
 end
 local function drawConfirm()
-	preset.sel(select == 1)
+	preselect(select == 1)
 	gpu.set(6, 11, "Confirm")
-	preset.sel(select == 2)
+	preselect(select == 2)
 	gpu.set(6, 12, "Cancel")
 end
 -- drawState
