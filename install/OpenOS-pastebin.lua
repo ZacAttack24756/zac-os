@@ -3,7 +3,7 @@ local component = require("component")
 if component.internet then
     -- If there is HTTP capability
     local internet = component.internet
-    local connection = internet.request("https://raw.githubusercontent.com/ZacAttack24756/zac-os/stable/install/OpenOS.lua")
+    local connection = internet.request("https://raw.githubusercontent.com/ZacAttack24756/zac-os/master/install/OpenOS.lua")
     con.finishConnect()
     local buffer = ""
     local data = ""
