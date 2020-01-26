@@ -193,11 +193,13 @@ while run do
 			if select > 1 then
 				select = select - 1
 			end
+			drawState()
 		elseif charCode == 208 then
 			-- Down arrow key
 			if select < maxSelect then
 				select = select + 1
 			end
+			drawState()
 		end
 	elseif id == "key_up" then
 		-- keybaord press finished
