@@ -4,7 +4,7 @@ if component.internet then
     -- If there is HTTP capability
     local internet = component.internet
     local connection = internet.request("https://raw.githubusercontent.com/ZacAttack24756/zac-os/master/install/OpenOS.lua")
-    con.finishConnect()
+    connection.finishConnect()
     local buffer = ""
     local data = ""
     -- Read the Internet Data
