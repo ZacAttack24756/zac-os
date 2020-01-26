@@ -6,7 +6,7 @@ local component  = require("component")
 local event      = require("event")
 local filesystem = require("filesystem")
 local gpu        = require("term").gpu()
-local internet   = computer.getPrimary("internet")
+local internet   = component.getPrimary("internet")
 
 -- Static
 local repos = {
