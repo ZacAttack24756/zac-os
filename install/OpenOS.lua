@@ -166,6 +166,7 @@ local function keyEnterDown()
 		if select == 1 then
 			-- Confirm
 			process()
+			run == false
 		elseif select == 2 then
 			-- Cancel
 			state = prevState
@@ -193,19 +194,20 @@ while run do
 			if select > 1 then
 				select = select - 1
 			end
-			drawState()
 		elseif charCode == 208 then
 			-- Down arrow key
 			if select < maxSelect then
 				select = select + 1
 			end
-			drawState()
 		end
+		drawState()
 	elseif id == "key_up" then
 		-- keybaord press finished
 		if charCode == 28 then
 			-- Enter key was pressed up
 			keyEnterDown()
+		else
+			drawState()
 		end
 	end
 end
