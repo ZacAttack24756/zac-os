@@ -206,8 +206,8 @@ while run do
 		if charCode == 28 then
 			-- Enter key was pressed up
 			keyEnterDown()
-		else
-			drawState()
 		end
+		drawState()
 	end
 end
+require("shell").execute("exit")
