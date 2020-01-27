@@ -166,7 +166,7 @@ local function keyEnterDown()
 		if select == 1 then
 			-- Confirm
 			process()
-			run == false
+			run = false
 		elseif select == 2 then
 			-- Cancel
 			state = prevState
